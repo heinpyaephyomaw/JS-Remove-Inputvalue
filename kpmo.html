@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .input-border {
+            border: 1px solid red;
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+        
+        .input-text {
+            /* border: none; */
+        }
+        
+        .input-text:focus {
+            outline: none;
+        }
+        
+        .ans {
+            border: 1px solid black;
+            border-radius: 0.25rem;
+            margin: 0 5px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="input-border" id="parent">
+            <!-- <span class="ans">apple</span> -->
+            <input type="text" class="input-text">
+        </div>
+    </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+    let input = document.querySelector(".input-text");
+    let input_border = document.querySelector(".input-border");
+    let temp = [];
+    let id = 1;
+    document.addEventListener("keyup", function(e) {
+        if (e.keyCode == 13) {
+            let result = input.value;
+            input.value = "";
+
+            if (!temp.includes(result)) {
+                temp.push(result);
+                $(".input-border").prepend(`<span onclick="RemoveSpan("${result}")"><i >x</i> ${result}</span>`);
+                id++;
+            }
+
+        }
+    });
+
+    function RemoveSpan(e) {
+        console.log(e);
+    }
+</script>
+
+</html>

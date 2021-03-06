@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .input-border {
+            border: 1px solid red;
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+        
+        .input-text {
+            /* border: none; */
+        }
+        
+        .input-text:focus {
+            outline: none;
+        }
+        
+        .ans {
+            border: 1px solid black;
+            margin-right: 5px;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="input-border">
+            <!-- <span class="ans">apple</span> -->
+            <input type="text" class="input-text">
+        </div>
+    </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+<script>
+    let input = document.querySelector(".input-text");
+    let input_border = document.querySelector(".input-border");
+    let temp = [];
+    let id = 1;
+    document.addEventListener("keyup", function(e) {
+        if (e.keyCode == 13) {
+            let result = input.value;
+            input.value = "";
+
+            if (!temp.includes(result)) {
+                temp.push(result);
+                $(".input-border").prepend(`<span class="ans" id="del-${id}"><i onclick="del(this)" id="id-${id}">x</i> ${result}</span>`);
+                id++;
+            }
+            // console.log(temp);
+
+            // for (let x = 0; x < temp.length; x++) {
+            //     console.log(temp[x]);
+            //     $(".input-border").prepend(`<span class="ans">${temp[x]}</span>`);
+
+            // }
+        }
+    });
+
+    function del(e) {
+
+        let remove = e.id;
+        console.log(remove);
+
+        let a = document.getElementById(`id-${e}`);
+        console.log(a);
+
+
+    }
+</script>
+
+</html>

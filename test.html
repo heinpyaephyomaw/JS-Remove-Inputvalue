@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="files/bower_components/bootstrap-tagsinput/css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="files/assets/css/style.css">
+    <style>
+        .bootstrap-tagsinput {
+            min-width: 300px !important;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <div class="tags_add">
+        <input type="text" list="browsers" name="browsers" class="form-control list_name" data-role="tagsinput">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+          </datalist>
+    </div>
+
+    <script src="files/bower_components/jquery/js/jquery.min.js"></script>
+    <script src="files/bower_components/bootstrap/js/bootstrap.min.js"></script>
+    <script src="files/bower_components/popper.js/js/popper.min.js"></script>
+    <!-- <script src="https://unpkg.com/@popperjs/core@2"></script> -->
+    <script src="files/bower_components/bootstrap-tagsinput/js/bootstrap-tagsinput.js"></script>
+    <!-- <script src="files/assets/js/script.js"></script> -->
+
+    <script>
+        let input = document.querySelector(`.bootstrap-tagsinput [size]`);
+        input.addEventListener("keydown", function() {
+
+        })
+
+
+        // let list_name, result;
+        // document.addEventListener("keydown", function() {
+        //     if (event.keyCode === 13) {
+        //         list_name = document.getElementsByClassName('label-info')[0];
+        //         let last = list_name[list_name.length - 1];
+        //         result = last.innerText;
+
+        //         // .innerText
+        //         console.log(result);
+        //     }
+
+        // });
+    </script>
+</body>
+
+</html>
